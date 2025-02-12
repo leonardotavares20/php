@@ -8,10 +8,11 @@
         body {
             display: grid;
             place-content: center;
+            text-align: center;
             height: 100vh;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: #fff;
+            color: red;
             background-color: #000;
             margin: 0;
             font-family: sans-serif;
@@ -20,12 +21,19 @@
 </head>
 <body>
     <!-- Inicie com php -S localhost:porta -->
-    <h1>
     <?php
-        $name = 'James da salada de fruta';
+        $bookName = 'Mil leguas submarinas';
+        $read = false;
+        $message = "";
 
-        echo "Hello $name";
+        if(!$read) {
+            $message = "Voce ainda nao leu o livro $bookName";
+        } else {
+            $message = "Voce leu o livro $bookName";
+        }
     ?>
+    <h1>
+        <?= $message ?>
     </h1>
 </body>
 </html>
