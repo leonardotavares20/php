@@ -1,3 +1,5 @@
 <?php
 
-require 'books.view.php'
+$name = 'Books';
+
+require 'views/books.view.php';
