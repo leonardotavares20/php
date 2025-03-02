@@ -10,7 +10,7 @@
             place-content: center;
             text-align: center;
             height: 100vh;
-            font-size: 2rem; 
+            font-size: 2rem;
             font-weight: bold;
             color: red;
             background-color: #000;
@@ -21,19 +21,8 @@
 </head>
 <body>
     <!-- Inicie com php -S localhost:porta -->
-    <?php
-        $bookName = 'Mil leguas submarinas';
-        $read = false;
-        $message = "";
-
-        if(!$read) {
-            $message = "Voce ainda nao leu o livro $bookName";
-        } else {
-            $message = "Voce leu o livro $bookName";
-        }
-    ?>
-    <h1>
-        <?= $message ?>
-    </h1>
+    <h1>Links</h1>
+    <a href="/books.php">Go to Books page</a>
+    
 </body>
 </html>
