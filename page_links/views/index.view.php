@@ -17,6 +17,10 @@
             margin: 0;
             font-family: sans-serif;
         }
+
+        .nav_link_active {
+            color: white;
+        }
     </style>
 </head>
 <body>
