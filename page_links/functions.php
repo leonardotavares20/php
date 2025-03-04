@@ -10,8 +10,6 @@ function dd($value) {
     die();
 }
 
-echo $_SERVER['REQUEST_URI'];
-
 function requestUriEquals($requestUri) {
     return $_SERVER['REQUEST_URI'] === $requestUri ? 'nav_link_active' : '';
 }
