@@ -1,9 +1,11 @@
 <?php
 class Database {
     public $connection;
-    public function  __construct($host, $port, $dbname, $username, $password) {
-        $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset=utf8mb4;";
-        $this->connection = new PDO($dsn, username: $username, password: $password);
+    public function  __construct($config, $username = 'root', $password = '') {
+        $dsn = 'mysql:' . http_build_query(data: $config, numeric_prefix: '', arg_separator: ';');
+        $this->connection = new PDO($dsn, username: $username, password: $password, options: [
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]);
     }
 
     public function executeQuery($query): mixed {

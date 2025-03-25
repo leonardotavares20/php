@@ -2,10 +2,13 @@
 
 require 'functions.php';
 require 'Database.php';
+require 'config.php';
 // require 'router.php';
 
-$db = new Database('localhost', 3306, 'project_php', 'root', '');
+$config = require('config.php');
 
-$posts = $db->query(query: 'SELECT * FROM posts')->fetchAll(PDO::FETCH_ASSOC);
+$db = new Database(config: $config, username: $config['database']['username'], password: $config['database']['password']);
+
+$posts = $db->query(query: 'SELECT * FROM posts')->fetchAll();
 
 dd(value: $posts);
